@@ -1,0 +1,20 @@
+/* Artfully masterminded by ZURB  */
+
+/* --------------------------------------------------
+Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+
+
+/* -----------------------------------------
+Shared Styles
+----------------------------------------- */
+li#tabInbox table {
+	width: 100%;
+	border-spacing: 0px;
+}
+
+li#tabInbox table .delete {
+	text-align:right;
+	width: 12%;
+}

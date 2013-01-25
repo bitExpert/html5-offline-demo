@@ -34,4 +34,7 @@
 			}, 0);
 		});
 	}
+
+	// start todo application
+	$('ul#todolist').todo();
 })(jQuery, this);

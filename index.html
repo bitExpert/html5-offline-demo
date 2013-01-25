@@ -17,8 +17,44 @@
 </head>
 <body>
 
+<!-- Basic Needs -->
+<nav class="top-bar">
+	<ul>
+		<li class="name"><h1><a href="#">HTML5 Todolist</a></h1></li>
+		<li class="toggle-topbar"><a href="#"></a></li>
+	</ul>
+</nav>
+
+<div class="row">
+	<div class="eight columns centered">
+		<div class="row">
+			<dl class="tabs contained">
+				<dd class="active"><a href="#tabInbox">My Inbox</a></dd>
+			</dl>
+			<ul class="tabs-content contained" id="todolist">
+				<li class="active" id="tabInbox">
+					<form>
+						<input type="text" placeholder="What needs to be done?" name="todo" value="" />
+						<input type="hidden" name="id" value="" />
+						<input type="button" class="button" value="store it">
+					</form>
+					<table class="responsive">
+						<tr>
+							<td>No todo items found!</td>
+						</tr>
+					</table>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
 <script src="javascripts/foundation/jquery.js"></script>
 <script src="javascripts/foundation/foundation.min.js"></script>
+<script src="javascripts/todo/storages/webstorage.js"></script>
+<script src="javascripts/todo/storages/websql.js"></script>
+<script src="javascripts/todo/storages/indexeddb.js"></script>
+<script src="javascripts/todo/storages/fileapi.js"></script>
+<script src="javascripts/todo/todo.js"></script>
 <script src="javascripts/app.js"></script>
 </body>
 </html>

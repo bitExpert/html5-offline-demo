@@ -1,8 +1,5 @@
 /**
  * Web SQL Database implementation
- *
- * @link http://www.html5rocks.com/en/tutorials/webdatabase/todo/
- * @link http://html5doctor.com/introducing-web-sql-databases/
  */
 var WebSQLDatabase = function(render) {
 	var onError = function(tx, ex) {

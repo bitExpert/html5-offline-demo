@@ -1,24 +1,6 @@
 /**
  * IndexedDB implementation
- *
- * IndexedDB is a new standard for client side storage in the browser. It is not a relational database, but instead stores JavaScript objects. The "Index" part of the name refers to the ability to select a data field as an "index" and then search the object store based on that data field.
- *
- * https://developer.mozilla.org/en-US/docs/IndexedDB/Basic_Concepts_Behind_IndexedDB
-http://stackoverflow.com/questions/12084177/in-indexeddb-is-there-a-way-to-make-a-sorted-compound-query
-http://dev.yathit.com/ydn-db/using/key-range-query.html
-http://stackoverflow.com/questions/6405650/querying-in-indexeddb?rq=1
-https://developer.mozilla.org/en-US/docs/IndexedDB/Using_IndexedDB#Using_an_index
-http://stackoverflow.com/questions/8694941/conceptual-problems-with-indexeddb-relationships-etc
-http://blog.oharagroup.net/post/16394604653/a-performance-comparison-websql-vs-indexeddb
-http://java.dzone.com/articles/searching-array-elements
-http://stackoverflow.com/questions/7086180/indexeddb-fuzzy-search/8961462#8961462
-http://stackoverflow.com/questions/11217309/how-to-update-an-html5-indexeddb-record?rq=1
-http://css.dzone.com/articles/blobs-and-more-storing-images
- *
- * @link http://www.html5rocks.com/en/tutorials/indexeddb/todo/
  */
-
-
 var IndexedDBStore = function(render) {
 	var onError = function(ex) {
 		alert("There has been an error: " + ex);

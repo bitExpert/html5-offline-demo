@@ -1,10 +1,6 @@
 /**
- * FILE API
- *
- * You may need the --allow-file-access-from-files flag if you're debugging your app from file://. Not using these flags will result in a SECURITY_ERR or QUOTA_EXCEEDED_ERR FileError.
+ * File API implementation
  */
-
-
 var FileAPI = function(render) {
 	var onError = function(e) {
 		var msg = '';
@@ -35,12 +31,9 @@ var FileAPI = function(render) {
 	};
 
 	// The file system has been prefixed as of Google Chrome 12:
+	window.storageInfo  = window.storageInfo || window.webkitStorageInfo;
 	window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-	if(!window.BlobBuilder)
-	{
-		// Chrome handling
-		window.BlobBuilder = window.WebKitBlobBuilder;
-	}
+	window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder;
 
 	var size = 5 * 1024*1024; // 5MB
 
@@ -52,7 +45,7 @@ var FileAPI = function(render) {
 		 */
 		add: function(item) {
 			// request quota for persistent store
-			window.webkitStorageInfo.requestQuota(
+			window.storageInfo.requestQuota(
 				PERSISTENT,
 				size,
 				function(grantedBytes) {
@@ -68,7 +61,7 @@ var FileAPI = function(render) {
 								function(fileEntry) {
 									fileEntry.createWriter(
 										function(fileWriter) {
-											var bb = new window.WebKitBlobBuilder();
+											var bb = new window.BlobBuilder();
 											bb.append(JSON.stringify(item)+"\n");
 
 											fileWriter.seek(fileWriter.length);
@@ -100,7 +93,7 @@ var FileAPI = function(render) {
 		 */
 		read: function(renderer) {
 			// request quota for persistent store
-			window.webkitStorageInfo.requestQuota(
+			window.storageInfo.requestQuota(
 				PERSISTENT,
 				size,
 				function(grantedBytes) {
